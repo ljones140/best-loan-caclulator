@@ -50,7 +50,7 @@ class LoanCalculator
   end
 
   def blended_rate
-    offers.map { |offer| offer.taken * offer.rate }.inject(:+) / @request
+    @blended_rate ||= offers.map { |offer| offer.taken * offer.rate }.inject(:+) / @request
   end
 
   def total_repayment
