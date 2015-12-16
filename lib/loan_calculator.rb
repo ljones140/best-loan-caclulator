@@ -31,7 +31,7 @@ class LoanCalculator
   def produce_quote
     { requested: @request,
       rate: blended_rate,
-      total: total_repayment.round(2),
+      total: total_compounded_repayment.round(2),
       monthly: monthly_repayment.round(2) }
   end
 
@@ -53,12 +53,12 @@ class LoanCalculator
     @blended_rate ||= offers.map { |offer| offer.taken * offer.rate }.inject(:+) / @request
   end
 
-  def total_repayment
-    @request * (1 + blended_rate/COMPOUND_FREQ) ** (COMPOUND_FREQ*YEARS)
+  def total_compounded_repayment
+    @total ||= @request * (1 + blended_rate/COMPOUND_FREQ) ** (COMPOUND_FREQ*YEARS)
   end
 
   def monthly_repayment
-    total_repayment / MONTHS
+    total_compounded_repayment / MONTHS
   end
 
   def verify_sufficent_funds

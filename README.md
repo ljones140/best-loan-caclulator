@@ -1,14 +1,6 @@
-# Best Loan Rate Calculator
+# Best Loan Rate Quote Calculator
 
-To run cd into directory.
-```sh
-./runner.rb [CSV file] [amount]
-```
-
-If you have issues running please check the shebang in runner.rb to ensure it works with your
-system.
-
-The program takes a CSV and an amount of requested to borrow. The CSV contains different offers from lenders with the amount
+CLI program which takes a CSV and an amount of requested to borrow. The CSV contains different offers from lenders with the amount
 of money they have available and the rate at which they will lend it at.
 
 The Program calculates the best rate available from the pool of lenders for a 36 month loan blending the
@@ -20,6 +12,14 @@ The quote is returned with monthly payments and total repayment calculated with
 monthly compounded interest.
 
 You can request a quote from £100 to £15000 in multiples of 100. The application will only be able to provide a quote in funds are available in the pool of lenders provided on the CSV.
+
+To run cd into directory.
+```sh
+./runner.rb [CSV file] [amount]
+```
+
+If you have issues running please check the shebang in runner.rb to ensure it works with your
+system.
 
 ## Approach
 
@@ -42,4 +42,4 @@ Lender,Rate,Available
 Bob,0.075,640
 ```
 
-A sample CSV market.csv is provided.
+A sample CSV market.csv is provided. This CSV file is also used for the tests.
