@@ -2,8 +2,8 @@ class CsvProcessor
 
   require 'csv'
 
-  def initialize(options)
-    @loan_calculator = options[:loan_calculator]
+  def initialize(loan_calculator:)
+    @loan_calculator = loan_calculator
   end
 
   def process(csv)

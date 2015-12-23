@@ -8,8 +8,8 @@ class LoanCalculator
 
   attr_reader :offers
 
-  def initialize(options)
-    @offer = options[:offer]
+  def initialize(offer:)
+    @offer = offer
     @offers = []
   end
 
