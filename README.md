@@ -15,11 +15,8 @@ You can request a quote from £100 to £15000 in multiples of 100. The applicati
 
 To run cd into directory.
 ```sh
-./runner.rb [CSV file] [amount]
+./loan_calculator [CSV file] [amount]
 ```
-
-If you have issues running please check the shebang in runner.rb to ensure it works with your
-system.
 
 ## Approach
 
@@ -30,7 +27,7 @@ simple way.
 
 I have used the approach that a unit is a unit of
 behaviour rather than an isolated component such as a class. Therefore in the
-unit tests the loan_calcutor_spec.rb is dependant on the Offer class as their
+unit tests the loan_calculator_spec.rb is dependant on the Offer class as their
 behaviour as collaborators is a unit.
 
 ## CSV format
